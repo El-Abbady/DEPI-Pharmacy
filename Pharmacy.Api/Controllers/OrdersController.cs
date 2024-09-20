@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Data;
 using Models;
 using Interfaces;
+using Dto;
 
 namespace Pharmacy.Api.Controllers
 {
@@ -24,6 +25,43 @@ namespace Pharmacy.Api.Controllers
         {
             return Ok(await _unitOfWork.Orders.GetAllAsync());
         }
-        
+
+        [HttpGet("GetByIdAsync")]
+        public async Task<IActionResult> GetByIdAsync(int id)
+        {
+            return Ok(await _unitOfWork.Orders.GetByIdAsync(id));
+        }
+
+        [HttpPost("Add")]
+        public async Task<IActionResult> Add(OrderDto orderdto)
+        {
+            Order order = new Order()
+            {
+                UserId = orderdto.UserId,
+                OrderDate = orderdto.OrderDate,
+                OrderStatus = orderdto.OrderStatus,
+                TotalAmount = orderdto.TotalAmount
+            };
+            _unitOfWork.Orders.Add(order);
+            _unitOfWork.Save();
+            return Ok(order);
+        }
+
+        [HttpDelete("DeleteById")]
+        public IActionResult DeleteById(int Id)
+        {
+            var order = _unitOfWork.Orders.GetById(Id);
+            _unitOfWork.Orders.Delete(order);
+            _unitOfWork.Save();
+            return Ok(order);
+        }
+
+        [HttpPut("Update")]
+        public IActionResult Update([FromBody]Order order)
+        {     
+            _unitOfWork.Orders.Update(order);
+            _unitOfWork.Save();
+            return Ok(order);
+        }
     }
 }
