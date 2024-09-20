@@ -8241,19 +8241,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\compu city\\.nuget\\packages\\": {}
+    "C:\\Users\\ahem2\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\project\\DEPI-Pharmacy\\Pharmacy.Api\\Pharmacy.Api.csproj",
+      "projectUniqueName": "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Api\\Pharmacy.Api.csproj",
       "projectName": "Pharmacy.Api",
-      "projectPath": "D:\\project\\DEPI-Pharmacy\\Pharmacy.Api\\Pharmacy.Api.csproj",
-      "packagesPath": "C:\\Users\\compu city\\.nuget\\packages\\",
-      "outputPath": "D:\\project\\DEPI-Pharmacy\\Pharmacy.Api\\obj\\",
+      "projectPath": "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Api\\Pharmacy.Api.csproj",
+      "packagesPath": "C:\\Users\\ahem2\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\compu city\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ahem2\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8261,14 +8261,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\project\\DEPI-Pharmacy\\Pharmacy.Dal\\Pharmacy.Dal.csproj": {
-              "projectPath": "D:\\project\\DEPI-Pharmacy\\Pharmacy.Dal\\Pharmacy.Dal.csproj"
+            "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Dal\\Pharmacy.Dal.csproj": {
+              "projectPath": "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Dal\\Pharmacy.Dal.csproj"
             }
           }
         }
@@ -8322,7 +8323,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
