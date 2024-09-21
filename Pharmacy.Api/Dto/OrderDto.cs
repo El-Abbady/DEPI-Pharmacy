@@ -10,6 +10,6 @@ namespace Dto
         public DateTime OrderDate { get; set; }
         public string OrderStatus { get; set; } = null!;
         public decimal TotalAmount { get; set; }
-        public virtual User? User { get; set; }
+        
     }
 }

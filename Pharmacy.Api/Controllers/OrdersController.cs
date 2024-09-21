@@ -57,9 +57,16 @@ namespace Pharmacy.Api.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update([FromBody]Order order)
-        {     
-            _unitOfWork.Orders.Update(order);
+        public IActionResult Update(int id, [FromBody]OrderDto order)
+        {
+            var o = _unitOfWork.Orders.GetById(id);
+            o.UserId = order.UserId;
+            o.OrderDate = order.OrderDate;
+            o.OrderStatus = order.OrderStatus;
+            o.TotalAmount = order.TotalAmount;
+            
+
+            _unitOfWork.Orders.Update(o);
             _unitOfWork.Save();
             return Ok(order);
         }
