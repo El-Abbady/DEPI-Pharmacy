@@ -33,3 +33,15 @@ C:\Users\ahem2\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0
 C:\Users\ahem2\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\refint\Pharmacy.Entities.dll
 C:\Users\ahem2\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.pdb
 C:\Users\ahem2\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\ref\Pharmacy.Entities.dll
+C:\Users\CLS\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\bin\Debug\net8.0\Pharmacy.Entities.deps.json
+C:\Users\CLS\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\bin\Debug\net8.0\Pharmacy.Entities.dll
+C:\Users\CLS\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\bin\Debug\net8.0\Pharmacy.Entities.pdb
+C:\Users\CLS\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CLS\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.AssemblyInfoInputs.cache
+C:\Users\CLS\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.AssemblyInfo.cs
+C:\Users\CLS\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.csproj.CoreCompileInputs.cache
+C:\Users\CLS\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.sourcelink.json
+C:\Users\CLS\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.dll
+C:\Users\CLS\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\refint\Pharmacy.Entities.dll
+C:\Users\CLS\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.pdb
+C:\Users\CLS\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\ref\Pharmacy.Entities.dll

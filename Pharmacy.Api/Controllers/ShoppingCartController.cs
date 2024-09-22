@@ -37,9 +37,11 @@ namespace Pharmacy.Api.Controllers
 
         //Edit or Update By id
         [HttpPut("UpdateById")]
-        public IActionResult Update(int id)
+        public IActionResult Update(int id, ShoppingCartDto dto)
         {
             var cart = _unitOfWork.ShoppingCarts.GetById(id);
+            cart.ProductId = dto.ProductId;
+            cart.Quantity = dto.Quantity;
             _unitOfWork.ShoppingCarts.Update(cart);
             _unitOfWork.Save();
             return Ok(cart);

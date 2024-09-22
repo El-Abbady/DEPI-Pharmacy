@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\project\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj": {}
+    "C:\\Users\\CLS\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj": {}
   },
   "projects": {
-    "D:\\project\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj": {
+    "C:\\Users\\CLS\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\project\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\CLS\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj",
         "projectName": "Pharmacy.Entities",
-        "projectPath": "D:\\project\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj",
-        "packagesPath": "C:\\Users\\compu city\\.nuget\\packages\\",
-        "outputPath": "D:\\project\\DEPI-Pharmacy\\Pharmacy.Entities\\obj\\",
+        "projectPath": "C:\\Users\\CLS\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj",
+        "packagesPath": "C:\\Users\\CLS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CLS\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\compu city\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\CLS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
