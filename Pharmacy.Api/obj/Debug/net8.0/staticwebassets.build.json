@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "PCILowL/vQCw62pQ1CThaEP7VIkuMM1CpxGh2KnfG0s=",
+  "Source": "Pharmacy.Api",
+  "BasePath": "_content/Pharmacy.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
