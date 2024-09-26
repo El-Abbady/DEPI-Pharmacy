@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Csharp\\DEPI-Pharmacy\\Pharmacy.Dal\\Pharmacy.Dal.csproj": {}
+    "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Dal\\Pharmacy.Dal.csproj": {}
   },
   "projects": {
-    "D:\\Csharp\\DEPI-Pharmacy\\Pharmacy.Dal\\Pharmacy.Dal.csproj": {
+    "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Dal\\Pharmacy.Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Csharp\\DEPI-Pharmacy\\Pharmacy.Dal\\Pharmacy.Dal.csproj",
+        "projectUniqueName": "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Dal\\Pharmacy.Dal.csproj",
         "projectName": "Pharmacy.Dal",
-        "projectPath": "D:\\Csharp\\DEPI-Pharmacy\\Pharmacy.Dal\\Pharmacy.Dal.csproj",
-        "packagesPath": "C:\\Users\\compu city\\.nuget\\packages\\",
-        "outputPath": "D:\\Csharp\\DEPI-Pharmacy\\Pharmacy.Dal\\obj\\",
+        "projectPath": "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Dal\\Pharmacy.Dal.csproj",
+        "packagesPath": "C:\\Users\\ahem2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Dal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\compu city\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ahem2\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +22,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Csharp\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj": {
-                "projectPath": "D:\\Csharp\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj"
+              "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj": {
+                "projectPath": "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj"
               }
             }
           }
@@ -74,21 +75,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Csharp\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj": {
+    "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Csharp\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj",
         "projectName": "Pharmacy.Entities",
-        "projectPath": "D:\\Csharp\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj",
-        "packagesPath": "C:\\Users\\compu city\\.nuget\\packages\\",
-        "outputPath": "D:\\Csharp\\DEPI-Pharmacy\\Pharmacy.Entities\\obj\\",
+        "projectPath": "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Entities\\Pharmacy.Entities.csproj",
+        "packagesPath": "C:\\Users\\ahem2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ahem2\\Documents\\GitHub\\DEPI-Pharmacy\\Pharmacy.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\compu city\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ahem2\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,6 +97,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -134,7 +136,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
