@@ -57,3 +57,15 @@ D:\Csharp\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.dll
 D:\Csharp\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\refint\Pharmacy.Entities.dll
 D:\Csharp\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.pdb
 D:\Csharp\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\ref\Pharmacy.Entities.dll
+D:\DEPI-Pharmacy\Pharmacy.Entities\bin\Debug\net8.0\Pharmacy.Entities.deps.json
+D:\DEPI-Pharmacy\Pharmacy.Entities\bin\Debug\net8.0\Pharmacy.Entities.dll
+D:\DEPI-Pharmacy\Pharmacy.Entities\bin\Debug\net8.0\Pharmacy.Entities.pdb
+D:\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.AssemblyInfoInputs.cache
+D:\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.AssemblyInfo.cs
+D:\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.csproj.CoreCompileInputs.cache
+D:\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.sourcelink.json
+D:\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.dll
+D:\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\refint\Pharmacy.Entities.dll
+D:\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\Pharmacy.Entities.pdb
+D:\DEPI-Pharmacy\Pharmacy.Entities\obj\Debug\net8.0\ref\Pharmacy.Entities.dll

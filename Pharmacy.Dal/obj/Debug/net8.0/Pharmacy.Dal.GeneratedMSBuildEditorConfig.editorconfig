@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Pharmacy.Dal
-build_property.ProjectDir = C:\Users\ahem2\Documents\GitHub\DEPI-Pharmacy\Pharmacy.Dal\
+build_property.ProjectDir = D:\DEPI-Pharmacy\Pharmacy.Dal\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
