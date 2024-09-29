@@ -25,7 +25,7 @@ public partial class User
 
     [StringLength(100)]
    
-    public string? Email { get; set; }
+    public string Email { get; set; }
 
     [StringLength(255)]
     

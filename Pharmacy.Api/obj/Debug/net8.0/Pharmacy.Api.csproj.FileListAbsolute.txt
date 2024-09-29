@@ -1432,3 +1432,5 @@ D:\DEPI-Pharmacy\Pharmacy.Api\obj\Debug\net8.0\refint\Pharmacy.Api.dll
 D:\DEPI-Pharmacy\Pharmacy.Api\obj\Debug\net8.0\Pharmacy.Api.pdb
 D:\DEPI-Pharmacy\Pharmacy.Api\obj\Debug\net8.0\Pharmacy.Api.genruntimeconfig.cache
 D:\DEPI-Pharmacy\Pharmacy.Api\obj\Debug\net8.0\ref\Pharmacy.Api.dll
+D:\DEPI-Pharmacy\Pharmacy.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\DEPI-Pharmacy\Pharmacy.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll

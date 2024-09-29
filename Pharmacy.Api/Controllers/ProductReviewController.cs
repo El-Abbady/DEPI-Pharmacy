@@ -19,7 +19,7 @@ namespace Pharmacy.Api.Controllers
             return Ok(await _unitOfWork.ProductReviews.GetAllAsync());
         }
 
-        [HttpPut("Add")]
+        [HttpPost("Add")]
         public IActionResult Add(ProductReviewDto dto)
         {
             ProductReview productReview = new ProductReview()
@@ -34,6 +34,15 @@ namespace Pharmacy.Api.Controllers
             _unitOfWork.ProductReviews.Add(productReview);
             _unitOfWork.Save();
             return Ok(productReview);
+        }
+
+        [HttpDelete("Delete")]
+        public IActionResult Delete(int id)
+        {
+            var review = _unitOfWork.ProductReviews.GetById(id);
+            _unitOfWork.ProductReviews.Delete(review);
+            _unitOfWork.Save();
+            return Ok(review);
         }
     }
 }

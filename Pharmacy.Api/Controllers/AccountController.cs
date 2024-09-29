@@ -1,4 +1,5 @@
 ﻿using Dto;
+using BCrypt.Net;
 using Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,18 +29,23 @@ namespace Pharmacy.Api.Controllers
         [HttpPost("Register")]
         public IActionResult Register(Registerdto user1)
         {
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(user1.Password);
 
             User s = new User
             {
                 FirstName = user1.FirstName,
                 LastName = user1.LastName,
                 Email = user1.Email,
-                PasswordHash = user1.Password,
-                RoleId=user1?.RoleId
+                Phone = user1.Phone,
+                Address = user1.Address,
+                PasswordHash = passwordHash,
+                RoleId = 2
 
             };
 
@@ -57,42 +63,41 @@ namespace Pharmacy.Api.Controllers
                 return BadRequest(ModelState);
             }
 
-           
+            // Find the user by email
             var user = _unitOfWork.Users
                         .GetAll()
                         .FirstOrDefault(z => z.Email == l.Email);
 
             if (user != null)
             {
-          
-                //bool va = BCrypt.Net.BCrypt.Verify(l.Password, user.PasswordHash);
-                if (l.Password==user.PasswordHash)
+                // Verify the provided password against the stored hash
+                bool isPasswordValid = BCrypt.Net.BCrypt.Verify(l.Password, user.PasswordHash);
+
+                if (isPasswordValid)
                 {
-               
-                    List<Claim> userclaim = new List<Claim>
+                    // Create user claims
+                    List<Claim> userClaims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
                 new Claim(ClaimTypes.Name, user.FirstName),
-                 new Claim(ClaimTypes.Role, user.RoleId.ToString())
-                    };
+                new Claim(ClaimTypes.Role, user.RoleId.ToString())
+            };
 
-                   
-
-
+                    // Create the JWT key and credentials
                     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:SecritKey"]));
                     var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-                    
+                    // Create the JWT token
                     JwtSecurityToken mytoken = new JwtSecurityToken(
                         issuer: _config["Jwt:IssuerIP"],
                         audience: _config["Jwt:AudienceIP"],
-                        claims: userclaim,
+                        claims: userClaims,
                         expires: DateTime.Now.AddHours(1),
                         signingCredentials: creds
                     );
 
-                   
+                    // Return the generated JWT token
                     return Ok(new
                     {
                         token = new JwtSecurityTokenHandler().WriteToken(mytoken)
@@ -102,7 +107,5 @@ namespace Pharmacy.Api.Controllers
 
             return Unauthorized();
         }
-
-
     }
 }

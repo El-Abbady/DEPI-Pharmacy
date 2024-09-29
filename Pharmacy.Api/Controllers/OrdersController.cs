@@ -9,6 +9,7 @@ using Data;
 using Models;
 using Interfaces;
 using Dto;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Pharmacy.Api.Controllers
 {
@@ -31,7 +32,8 @@ namespace Pharmacy.Api.Controllers
         {
             return Ok(await _unitOfWork.Orders.GetByIdAsync(id));
         }
-
+        [Authorize(Roles ="1,2")]
+        
         [HttpPost("Add")]
         public async Task<IActionResult> Add(OrderDto orderdto)
         {
@@ -40,7 +42,6 @@ namespace Pharmacy.Api.Controllers
                 UserId = orderdto.UserId,
                 OrderDate = orderdto.OrderDate,
                 OrderStatus = orderdto.OrderStatus,
-                
             };
             _unitOfWork.Orders.Add(order);
             _unitOfWork.Save();

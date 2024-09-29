@@ -1,5 +1,6 @@
 ﻿using Dto;
 using Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 
@@ -54,8 +55,8 @@ namespace Pharmacy.Api.Controllers
 
             return Ok(product);
         }
-
         [HttpPost("Insert")]
+        [Authorize(Roles ="1")]
         public IActionResult Add([FromBody] ProductDto p)
         {
             if (!ModelState.IsValid)
