@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,11 +15,9 @@ public partial class ProductReview
 
     public int? UserId { get; set; }
 
-    public int? Rating { get; set; }
-
-    [StringLength(255)]
     
-    public string? TitleReview { get; set; }
+    
+    public string? UserName { get; set; }
 
     [Column(TypeName = "text")]
     public string? ContentReview { get; set; }
