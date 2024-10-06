@@ -1,4 +1,3 @@
-
 using Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Data;
@@ -16,45 +15,28 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
         var con = builder.Configuration.GetConnectionString("con");
+
+    
         builder.Services.AddDbContext<OnlinePharmacyDbContext>(options => options.UseSqlServer(con));
+
+       
         builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-        // Add services to the container.
 
         builder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["Jwt:IssuerIP"],
-            ValidAudience = builder.Configuration["Jwt:AudienceIP"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecritKey"]))
-        };
-    });
 
-
-        builder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+  
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
 
-            // Define the security scheme
             var securityScheme = new OpenApiSecurityScheme
             {
                 Name = "JWT Authentication",
                 Description = "Enter JWT token",
                 In = ParameterLocation.Header,
                 Type = SecuritySchemeType.Http,
-                Scheme = "bearer", // Or the authentication scheme you are using, e.g., "bearer"
+                Scheme = "bearer",
                 BearerFormat = "JWT",
                 Reference = new OpenApiReference
                 {
@@ -65,24 +47,81 @@ public class Program
 
             c.AddSecurityDefinition("Bearer", securityScheme);
 
-            // Make sure Swagger UI requires a JWT token to be passed
             c.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
             {
-                Reference = new OpenApiReference
                 {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    new string[] { }
                 }
-            },
-            new string[] { }
-        }
-    });
+            });
+        });
+
+      
+        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(options =>
+        {
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = builder.Configuration["Jwt:IssuerIP"],
+                ValidAudience = builder.Configuration["Jwt:AudienceIP"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecritKey"]))
+            };
+        });
+
+    
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAll", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            });
+        });
+
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowFrontend", builder =>
+            {
+                builder.WithOrigins("http://localhost:5173")  // Frontend URL
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .AllowCredentials();  // Allow credentials if needed
+            });
+        });
+
+        var app = builder.Build();
+
+        // Use CORS
+        app.UseCors("AllowFrontend");
+
+        // Handle preflight requests
+        app.Use(async (context, next) =>
+        {
+            if (context.Request.Method == "OPTIONS")
+            {
+                context.Response.StatusCode = 200;
+                await context.Response.WriteAsync("OK");
+            }
+            else
+            {
+                await next();
+            }
         });
         builder.Services.AddAuthorization();
-        var app = builder.Build();
+
+      
 
         if (app.Environment.IsDevelopment())
         {
@@ -92,8 +131,14 @@ public class Program
 
         app.UseHttpsRedirection();
 
+        app.UseCors("AllowFrontend");
+
+
+        app.UseCors("AllowAll");
+        app.UseAuthentication();
         app.UseAuthorization();
 
+    
 
         app.MapControllers();
 
