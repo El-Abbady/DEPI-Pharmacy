@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,9 +11,10 @@ public partial class ShoppingCartItem
     [Key]
     public int CartItemId { get; set; }
 
-    public int? CartId { get; set; }
-
-    public int? ProductId { get; set; }
+    [ForeignKey("User")]
+    public int? UserId { get; set; }
+    
+    public virtual User? User { get; set; }
 
     public int? Quantity { get; set; }
 
@@ -23,11 +24,10 @@ public partial class ShoppingCartItem
     [Column(TypeName = "decimal(21, 2)")]
     public decimal? LineTotal { get; set; }
 
-    [ForeignKey("CartId")]
-    [InverseProperty("ShoppingCartItems")]
-    public virtual ShoppingCart? Cart { get; set; }
+    
 
-    [ForeignKey("ProductId")]
-    [InverseProperty("ShoppingCartItems")]
+    [ForeignKey("Product")]
+    public int? ProductId { get; set; }
+   
     public virtual Product? Product { get; set; }
 }
