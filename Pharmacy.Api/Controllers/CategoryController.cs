@@ -1,4 +1,5 @@
-﻿using Interfaces;
+using Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
@@ -25,6 +26,7 @@ public class CategoryController : ApiBaseController
         return Ok(p);
     }
     [HttpPost]
+  //[Authorize(Roles = "1")]
     public IActionResult Add(CategoryDto p1)
     {
         Category p=new Category(){
@@ -35,6 +37,7 @@ public class CategoryController : ApiBaseController
         return Ok("Done Add");
     }
     [HttpDelete]
+    //[Authorize(Roles = "1")]
     public IActionResult Remove(int id)
     {
         var p = _unitOfWork.Categories.GetById(id);
@@ -47,6 +50,7 @@ public class CategoryController : ApiBaseController
         return Ok("Done");
     }
     [HttpPut("Update")]
+    //[Authorize(Roles = "1")]
     public IActionResult Update(int id,CategoryDto p)
     {
         Category x= _unitOfWork.Categories.GetById(id);
