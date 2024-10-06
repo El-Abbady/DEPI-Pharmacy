@@ -1,4 +1,4 @@
-﻿using Interfaces;
+using Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
@@ -22,27 +22,50 @@ namespace Pharmacy.Api.Controllers
         [HttpPost("Add")]
         public IActionResult Add(ProductReviewDto dto)
         {
-            ProductReview productReview = new ProductReview()
+            try
             {
-                ProductId = dto.ProductId,
-                UserId = dto.UserId,
-                Rating = dto.Rating,
-                TitleReview = dto.TitleReview,
-                ContentReview = dto.ContentReview
-            };
+                var user = _unitOfWork.Users
+                           .GetAll()
+                           .FirstOrDefault(z => z.Email == dto.email);
 
-            _unitOfWork.ProductReviews.Add(productReview);
-            _unitOfWork.Save();
-            return Ok(productReview);
+                if (user == null)
+                {
+                    return NotFound($"User with email {dto.email} not found.");
+                }
+
+                ProductReview productReview = new ProductReview()
+                {
+                    ProductId = dto.ProductId,
+                    UserId = user.UserId,
+                    UserName = user.FirstName,
+                    ContentReview = dto.ContentReview,
+                };
+
+                _unitOfWork.ProductReviews.Add(productReview);
+                _unitOfWork.Save();
+
+                return Ok("done");
+            }
+            catch (Exception ex)
+            {
+               
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while adding the review. Please try again later.");
+            }
         }
 
         [HttpDelete("Delete")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var review = _unitOfWork.ProductReviews.GetById(id);
+            var review = await _unitOfWork.ProductReviews.GetByIdAsync(id);
+            if (review == null)
+            {
+                return NotFound($"Review with ID {id} not found.");
+            }
+
             _unitOfWork.ProductReviews.Delete(review);
             _unitOfWork.Save();
-            return Ok(review);
+
+            return Ok("Review deleted successfully.");
         }
     }
 }
