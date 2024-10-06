@@ -1,4 +1,4 @@
-﻿using Dto;
+using Dto;
 using BCrypt.Net;
 using Interfaces;
 using Microsoft.AspNetCore.Http;
@@ -70,6 +70,10 @@ namespace Pharmacy.Api.Controllers
 
             if (user != null)
             {
+                if (user.PasswordHash == null)
+                {
+                    return BadRequest("Password hash not found.");
+                }
                 // Verify the provided password against the stored hash
                 bool isPasswordValid = BCrypt.Net.BCrypt.Verify(l.Password, user.PasswordHash);
 
@@ -109,3 +113,4 @@ namespace Pharmacy.Api.Controllers
         }
     }
 }
+
