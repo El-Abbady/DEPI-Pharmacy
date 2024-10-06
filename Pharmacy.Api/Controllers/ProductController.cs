@@ -1,4 +1,4 @@
-﻿using Dto;
+using Dto;
 using Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +20,7 @@ namespace Pharmacy.Api.Controllers
             var products = _unitOfWork.Products.GetAll()
                 .Select(p => new ProductDto
                 {
+                    ProductId = p.ProductId,
                     ProductName = p.ProductName,
                     Description = p.ProductDescription,
                     Price = (int)p.Price,
@@ -31,6 +32,7 @@ namespace Pharmacy.Api.Controllers
 
             return Ok(products);
         }
+
 
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
@@ -44,7 +46,8 @@ namespace Pharmacy.Api.Controllers
                     Price = (int)p.Price,
                     QuantityInStock = (int)p.QuantityInStock,
                     CategoryId = p.CategoryId,
-                    ImageUrl = p.ProductImage
+                    ImageUrl = p.ProductImage,
+                    ProductId = p.ProductId
                 })
                 .FirstOrDefault();
 
@@ -56,7 +59,7 @@ namespace Pharmacy.Api.Controllers
             return Ok(product);
         }
         [HttpPost("Insert")]
-        [Authorize(Roles ="1")]
+        [Authorize(Roles = "1")]
         public IActionResult Add([FromBody] ProductDto p)
         {
             if (!ModelState.IsValid)
@@ -120,7 +123,7 @@ namespace Pharmacy.Api.Controllers
             _unitOfWork.Products.Delete(product);
             _unitOfWork.Save();
 
-            return  Ok ("Done"); 
+            return Ok("Done");
         }
     }
 }
